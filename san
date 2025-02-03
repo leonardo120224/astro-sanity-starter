@@ -1,0 +1,65 @@
+<!DOCTYPE html>
+<html lang="es">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Para Avril ❤️</title>
+    <style>
+        body {
+            text-align: center;
+            font-family: Arial, sans-serif;
+            background-color: pink;
+        }
+        h1 {
+            font-size: 28px;
+            color: red;
+        }
+        .container {
+            margin-top: 50px;
+        }
+        .btn {
+            font-size: 20px;
+            padding: 10px 20px;
+            margin: 10px;
+            border: none;
+            cursor: pointer;
+            border-radius: 10px;
+        }
+        .yes {
+            background-color: red;
+            color: white;
+        }
+        .no {
+            background-color: gray;
+            color: white;
+            position: absolute;
+        }
+        .hidden {
+            display: none;
+        }
+    </style>
+</head>
+<body>
+    <h1>Avril Llerena, ¿quieres ser mi San Valentín? ❤️</h1>
+    <div class="container">
+        <button class="btn yes" onclick="aceptar()">Sí acepto ❤️</button>
+        <button class="btn no" id="noBtn" onmouseover="moverNo()">Nada 😴</button>
+    </div>
+    <h2 id="mensaje" class="hidden">¡Sii! Muchas gracias amor por aceptarme ser tu San Valentín ❤️ Te amo mucho 🥰 ya nos veremos, solo falta esperar un tiempo. ¡Te amo! ❤️</h2>
+
+    <script>
+        function aceptar() {
+            document.querySelector('.container').style.display = 'none';
+            document.getElementById('mensaje').classList.remove('hidden');
+        }
+
+        function moverNo() {
+            let btnNo = document.getElementById('noBtn');
+            let x = Math.random() * (window.innerWidth - btnNo.clientWidth);
+            let y = Math.random() * (window.innerHeight - btnNo.clientHeight);
+            btnNo.style.left = `${x}px`;
+            btnNo.style.top = `${y}px`;
+        }
+    </script>
+</body>
+</html>
